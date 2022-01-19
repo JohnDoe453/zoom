@@ -22,14 +22,11 @@ app.get('/', (req, res) => {
 			grant_type: 'authorization_code',
 			//The code below is a sample authorization code. Replace it with your actual authorization code while making requests.
 			code: code,
-			//The uri below is a sample redirect_uri. Replace it with your actual redirect_uri while making requests.
-			redirect_uri: 'http://localhost:3000',
-		},
 		headers: {
 			/**The credential below is a sample base64 encoded credential. Replace it with "Authorization: 'Basic ' + Buffer.from(your_app_client_id + ':' + your_app_client_secret).toString('base64')"
 			 **/
 			Authorization:
-				'Basic ' +
+				'Basadfasdfsic ' +
 				Buffer.from(
 					'8gBoWz4UT2acXnEEN1iQPQ:gAxl3Xc50TFM6dqRN40fLVG7fV91cBqQ'
 				).toString('base64'),
@@ -40,7 +37,7 @@ app.get('/', (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log(body);
+			console.log(body);asdfasdf
 			const lol = JSON.parse(body);
 			const url = `http://localhost:3000/createMeet?acc=${lol.access_token}`;
 			console.log(url);
@@ -49,7 +46,7 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.get('/createMeet', (req, res) => {
+app.get('/createMeet', (req, res) => {asdfasd
 	const url = `https://api.zoom.us/v2/users/me/meetings`;
 	console.log(req.query.acc);
 	const options = {
